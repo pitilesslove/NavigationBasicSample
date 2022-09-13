@@ -16,10 +16,10 @@ class TitleScreen : Fragment() {
         binding = FragmentTitleScreenBinding.inflate(inflater)
 
         binding.playBtn.setOnClickListener {
-            it.findNavController().navigate(R.id.action_title_screen_to_FirstFragment)
+            it.findNavController().navigate(R.id.action_title_screen_to_register)
         }
         binding.leaderboardBtn.setOnClickListener {
-            it.findNavController().navigate(R.id.action_title_screen_to_SecondFragment)
+            it.findNavController().navigate(R.id.action_title_screen_to_leaderboard)
         }
 
         return binding.root
