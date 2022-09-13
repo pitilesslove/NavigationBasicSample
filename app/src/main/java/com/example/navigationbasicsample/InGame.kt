@@ -18,14 +18,14 @@ class InGame : Fragment() {
         binding = FragmentInGameBinding.inflate(inflater)
 
         val gameOverListener: (View) -> Unit = {
-//            it.findNavController().navigate(R.id.action_in_game_to_gameOver)
+            it.findNavController().navigate(R.id.action_in_game_to_gameOver)
         }
 
         binding.checkBox.setOnClickListener(gameOverListener)
         binding.checkBox2.setOnClickListener(gameOverListener)
         binding.checkBox4.setOnClickListener(gameOverListener)
         binding.checkBox3.setOnClickListener {
-//            it.findNavController().navigate(R.id.action_in_game_to_resultsWinner)
+            it.findNavController().navigate(R.id.action_in_game_to_resultsWinner)
         }
 
         return binding.root

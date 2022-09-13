@@ -87,6 +87,47 @@
         android:name="com.example.navigationbasicsample.InGame"
         android:label="Game"
         tools:layout="@layout/fragment_in_game">
+        <action
+            android:id="@+id/action_in_game_to_resultsWinner"
+            app:destination="@id/results_winner"
+            app:popUpTo="@+id/match"
+            app:popUpToInclusive="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+        <action
+            android:id="@+id/action_in_game_to_gameOver"
+            app:destination="@id/game_over"
+            app:popUpTo="@id/match"
+            app:popUpToInclusive="false"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/results_winner"
+        android:name="com.example.navigationbasicsample.ResultsWinner"
+        tools:layout="@layout/fragment_results_winner">
+        <action android:id="@+id/action_results_winner_to_leaderboard"
+            app:destination="@id/leaderboard"
+            app:popUpTo="@id/title_screen"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"/>
+        <action android:id="@+id/action_results_winner_to_match"
+            app:popUpTo="@id/match"/>
+    </fragment>
+    <fragment
+        android:id="@+id/game_over"
+        android:name="com.example.navigationbasicsample.GameOver"
+        android:label="fragment_game_over"
+        tools:layout="@layout/fragment_game_over">
+        <action android:id="@+id/action_game_over_to_match"
+            app:popUpTo="@id/match"/>
     </fragment>
 
 
