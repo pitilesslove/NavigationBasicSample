@@ -33,6 +33,14 @@
         android:name="com.example.navigationbasicsample.Register"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register">
+
+        <action
+            android:id="@+id/action_register_to_match"
+            app:destination="@id/match"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
 
     <fragment
@@ -40,5 +48,47 @@
         android:name="com.example.navigationbasicsample.LeaderBoard"
         android:label="fragment_leaderboard"
         tools:layout="@layout/fragment_leaderboard">
+
+        <action
+            android:id="@+id/action_leaderboard_to_userProfile"
+            app:destination="@id/user_profile"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/match"
+        android:name="com.example.navigationbasicsample.Match"
+        android:label="fragment_match"
+        tools:layout="@layout/fragment_match">
+        <action
+            android:id="@+id/action_match_to_in_game"
+            app:destination="@id/in_game"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/user_profile"
+        android:name="com.example.navigationbasicsample.UserProfile"
+        android:label="fragment_user_profile"
+        tools:layout="@layout/fragment_user_profile">
+        <argument android:name="userName"
+            android:defaultValue="name"/>
+        <deepLink app:uri="www.example.com/user/{userName}" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/in_game"
+        android:name="com.example.navigationbasicsample.InGame"
+        android:label="Game"
+        tools:layout="@layout/fragment_in_game">
+    </fragment>
+
+
+
 </navigation>

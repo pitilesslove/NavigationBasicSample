@@ -1,6 +1,7 @@
 package com.example.navigationbasicsample
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,11 +66,12 @@ class MyAdapter(private val myDataset: Array<String>) :
         holder.binding.userNameText.text = myDataset[position]
         holder.binding.userAvatarImage.setImageResource(listOfAvatars[position])
         holder.binding.root.setOnClickListener {
+            Log.i("LeaderBoard", "on Clicked =$it")
             val bundle = bundleOf("userName" to myDataset[position])
 
-//            it.findNavController().navigate(
-//                R.id.action_leaderboard_to_userProfile,
-//                bundle)
+            it.findNavController().navigate(
+                R.id.action_leaderboard_to_userProfile,
+                bundle)
         }
     }
 

@@ -6,20 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import com.example.navigationbasicsample.databinding.FragmentRegisterBinding
+import com.example.navigationbasicsample.databinding.FragmentMatchBinding
 
-class Register : Fragment() {
+class Match: Fragment() {
 
-    private lateinit var binding: FragmentRegisterBinding
+    lateinit var binding : FragmentMatchBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        binding = FragmentMatchBinding.inflate(inflater)
 
-        binding = FragmentRegisterBinding.inflate(inflater)
-        binding.signupBtn.setOnClickListener {
-            it.findNavController().navigate(R.id.action_register_to_match)
+        binding.playBtn3.setOnClickListener {
+            it.findNavController().navigate(R.id.action_match_to_in_game)
         }
-
         return binding.root
     }
 }

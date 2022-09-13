@@ -28,8 +28,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed" />
 
-    <FrameLayout
+    <include
         android:id="@+id/include_avatar_picker"
+        layout="@layout/layout_picker"
         android:layout_width="0dp"
         android:layout_height="200dp"
         android:layout_marginStart="34dp"
